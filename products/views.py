@@ -9,7 +9,7 @@ from products.models import Product, ProductCategory
 
 def index(request):
     context = {'title': 'Store'}
-    return render(request, 'index.html', context)
+    return render(request, 'products/index.html', context)
 
 
 def products(request, category_id=None):
@@ -22,4 +22,4 @@ def products(request, category_id=None):
         'categories': ProductCategory.objects.all(),
         'products': products,
     }
-    return render(request, 'products.html', context)
+    return render(request, 'products/products.html', context)
